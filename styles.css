@@ -1,0 +1,32 @@
+.myHeader{
+    color: rgb(0, 0, 0);
+    justify-self: center;
+    padding-bottom: 3%;    
+}
+
+
+.pageDescription{
+    color:darkred;
+    font-size: 20px;
+    justify-self: center;
+    padding: 70px;
+    
+}
+
+.mainNav{
+    display: flex;    
+    justify-content: space-evenly;       
+}
+
+.icons{
+    justify-self: center;
+    text-decoration: none;
+    color:black;
+    text-align: center;
+}
+
+#cartContent{
+    justify-self: center;
+    font-size: larger;
+}
+
