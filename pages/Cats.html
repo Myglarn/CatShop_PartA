@@ -7,7 +7,7 @@
     <meta name="description" content="An online shop for cats" />
     <title>Cat shop</title>
     <link rel="stylesheet" href="../styles.css">
-    <script src="../scripts.js"></script>
+    <script src="../script.js"></script>
     <link rel="icon" type="image/x-icon" href="images/icons8-cat-50.png">     
 </head>
 
@@ -38,6 +38,14 @@
     </nav>
 
     <p class="pageDescription">Available Cats</p>
+    
+    <div id="catList" class="catList"></div>
+
+    <div class="pagination">
+        <button id="prevBtn" onclick="prevPage()">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn" onclick="nextPage()">Next</button>
+    </div>
 
     
 
