@@ -1,9 +1,30 @@
-.myHeader {
+header{
+    text-align: center;
+    justify-content: center;
     color: rgb(0, 0, 0);
     justify-self: center;
     padding-bottom: 3%;
+    font-size: larger;
 }
 
+body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+  }
+
+  main {
+      flex: 1;
+  }
+
+  footer {
+      border: 2px solid #000000;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      color: rgb(0, 0, 0);
+  }
 
 .pageDescription {
     color: darkred;
@@ -26,12 +47,13 @@
 }
 
 #cartContent {
-    border: 2px solid #000000;
-    border-radius: 10px;
-    display: grid;
+    /* border: 2px solid #000000;
+    border-radius: 10px; */
+    display: flex;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
+    text-align: center;
 }
 
 .cartItem {
