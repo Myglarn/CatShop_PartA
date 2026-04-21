@@ -32,7 +32,8 @@ function renderCats(){
     const card = document.createElement("div");
     card.className = "catCard";
    card.innerHTML = `
-              <img src="${imageUrl}" alt="${cat.name}" />
+              <img src="${imageUrl}" alt="${cat.name}" 
+              onerror="this.src='../images/MissingCatPic.gif'"/>
               <h3>${cat.name}</h3>
               <p>Origin: ${cat.origin}</p>
               <button onclick="addToCart('${cat.id}')">Add to cart</button>
@@ -73,6 +74,15 @@ function addToCart(catId) {
   }
 }
 
+function removeFromCart(catId){
+  const catToRemove = purchasedCats.findIndex((cat) => cat.id === catId);
+  if(catToRemove !== -1){
+    purchasedCats.splice(catToRemove, 1);
+    localStorage.setItem("purchasedCats", JSON.stringify(purchasedCats));
+    shoppingCart();
+  }
+}
+
 function shoppingCart() {
     const cartDiv = document.getElementById("cartContent");
     if (!cartDiv) return;
@@ -92,9 +102,11 @@ function shoppingCart() {
       const item = document.createElement("article");
       item.className = "cartItem";
       item.innerHTML = `
-        <img src="${imageUrl}" alt="${cat.name}" />
+        <img src="${imageUrl}" alt="${cat.name}"
+        onerror="this.src='../images/MissingCatPic.gif'"/>
         <h3>${cat.name}</h3>
         <p>Origin: ${cat.origin}</p>
+        <button onclick="removeFromCart('${cat.id}')">Remove from cart</button>
       `;
       cartDiv.appendChild(item);
     }
